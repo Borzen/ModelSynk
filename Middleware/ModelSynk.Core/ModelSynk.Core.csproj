@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Actions\" />
+    <Folder Include="DI\" />
+    <Folder Include="DataServices\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Services\" />
+    <Folder Include="Tasks\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccess\ModelSynk.DataAccess\ModelSynk.DataAccess.csproj" />
+    <ProjectReference Include="..\Generators\ModelSynk.Generator.CSharp\ModelSynk.Generator.CSharp.csproj" />
+    <ProjectReference Include="..\Generators\ModelSynk.Generator.TypeScript\ModelSynk.Generator.TypeScript.csproj" />
+  </ItemGroup>
+
+</Project>

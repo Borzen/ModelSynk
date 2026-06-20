@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/DataAccess/">
+    <Project Path="DataAccess/ModelSynk.DataAccess.Sqlite/ModelSynk.DataAccess.Sqlite.csproj" />
+    <Project Path="DataAccess/ModelSynk.DataAccess/ModelSynk.DataAccess.csproj" />
+  </Folder>
+  <Folder Name="/Middleware/">
+    <Project Path="Middleware/ModelSynk.Core.Helpers/ModelSynk.Core.Helpers.csproj" Id="7d3a42bf-f576-48e1-858d-cf3975d19b17" />
+    <Project Path="Middleware/ModelSynk.Core/ModelSynk.Core.csproj" />
+  </Folder>
+  <Folder Name="/Middleware/Generators/">
+    <Project Path="Middleware/Generators/ModelSynk.Generator.CSharp/ModelSynk.Generator.CSharp.csproj" />
+    <Project Path="Middleware/Generators/ModelSynk.Generator.TypeScript/ModelSynk.Generator.TypeScript.csproj" />
+    <Project Path="Middleware/Generators/ModelSynk.Generator/ModelSynk.Generator.csproj" Id="09deb3f1-ed06-48c1-9ce0-a643f21ef9e3" />
+  </Folder>
+  <Project Path="ModelSynk/ModelSynk.csproj" />
+</Solution>
