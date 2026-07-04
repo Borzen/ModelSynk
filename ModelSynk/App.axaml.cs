@@ -3,6 +3,9 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using Microsoft.Extensions.DependencyInjection;
+using ModelSynk.Core.Actions.Abstractions;
+using ModelSynk.DI;
 using ModelSynk.ViewModels;
 using ModelSynk.Views;
 using System.Linq;
@@ -18,11 +21,29 @@ namespace ModelSynk
 
         public override void OnFrameworkInitializationCompleted()
         {
+            var collection = new ServiceCollection();
+            collection.AddModelSyncUIServices();
+
+            var services = collection.BuildServiceProvider();
+
+            var settingsManagementServices = services.GetRequiredService<IManageSettingsDatabase>();
+
+            settingsManagementServices.RunDatabaseManagementScripts();
+
+            var mainVM = services.GetRequiredService<MainWindowViewModel>();
+
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = mainVM,
+                };
+            }
+            else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
+            {
+                singleViewPlatform.MainView = new MainWindow
+                {
+                    DataContext = mainVM
                 };
             }
 

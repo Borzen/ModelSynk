@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="using:ModelSynk"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ModelSynk.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ModelSynk.DataSourceSelectorWindow"
+        x:DataType="vm:DataSourceSelectorViewModel"
+        Title="DataSourcesWindow">
+    <Grid ColumnDefinitions="*, 4, *">
+        <ListBox Grid.Column="0" x:Name="dataSources" SelectionMode="Single" ItemsSource="{Binding DataSources}" SelectedItem="{Binding SelectedDataSource}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" MaxHeight="128">
+                    <Svg Path="{Binding Logo}" /> <Label Content="{Binding Name}"/>
+                </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <GridSplitter Grid.Column="1" Background="Black" ResizeDirection="Columns" />
+    <StackPanel Grid.Column="2">
+        <Label >Name</Label>
+        <TextBox Text="{Binding SelectedDataSource.Name}"></TextBox>
+        <Label>Type</Label>
+        <ComboBox ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedDataSource.Type}" PlaceholderText="Select Data Source Type"></ComboBox>
+        <Label>Connection String</Label>
+        <TextBox Text="{Binding SelectedDataSource.ConnectionString }"></TextBox>
+        <Button Name="btn_connect">Connect</Button>
+    </StackPanel>
+    </Grid>
+</Window>

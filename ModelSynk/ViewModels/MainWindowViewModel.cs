@@ -2,6 +2,11 @@
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting { get; } = "Welcome to Avalonia!";
+        private readonly object _settingsService;
+
+        public MainWindowViewModel(object settingsService)
+        {
+            _settingsService = settingsService;
+        }
     }
 }

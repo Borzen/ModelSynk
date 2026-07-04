@@ -7,18 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Actions\" />
-    <Folder Include="DI\" />
     <Folder Include="DataServices\" />
+    <Folder Include="Enums\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Services\" />
     <Folder Include="Tasks\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DataAccess\ModelSynk.DataAccess\ModelSynk.DataAccess.csproj" />
+    <ProjectReference Include="..\..\DataAccess\ModelSynk.DataAccess.Sqlite\ModelSynk.DataAccess.Sqlite.csproj" />
     <ProjectReference Include="..\Generators\ModelSynk.Generator.CSharp\ModelSynk.Generator.CSharp.csproj" />
     <ProjectReference Include="..\Generators\ModelSynk.Generator.TypeScript\ModelSynk.Generator.TypeScript.csproj" />
   </ItemGroup>

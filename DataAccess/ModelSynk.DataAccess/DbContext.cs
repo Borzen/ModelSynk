@@ -4,7 +4,8 @@ using System.Text;
 
 namespace ModelSynk.DataAccess
 {
-    internal class DbContext
+    public abstract class DbContext : IDisposable
     {
+        public abstract void Dispose();
     }
 }

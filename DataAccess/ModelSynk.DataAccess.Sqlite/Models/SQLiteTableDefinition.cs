@@ -1,4 +1,4 @@
-﻿using ModelSynk.DataAccess.Models;
+﻿using ModelSynk.DataAccess.Models.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Text;
